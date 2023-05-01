@@ -1,0 +1,19 @@
+# Install the required packages for building Python with SSL/TLS support
+sudo apt-get install build-essential libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev libffi-dev tk-dev
+
+# Download the Python 3.10.6 source code:
+wget https://www.python.org/ftp/python/3.10.6/Python-3.10.6.tgz
+
+# Extract the source code:
+tar -xzf Python-3.10.6.tgz
+cd Python-3.10.6
+
+# Configure the build with SSL/TLS support:
+./configure --with-ssl
+
+# Build and install Python:
+make -j$(nproc)
+sudo make altinstall
+
+# Check version
+python3.10.6 --version
