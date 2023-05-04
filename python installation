@@ -16,4 +16,4 @@ make -j$(nproc)
 sudo make altinstall
 
 # Check version
-python3.10.6 --version
+python3.10 --version
